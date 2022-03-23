@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -21,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
             fontWeight: FontWeight.bold,
           ),
           ),
-          
+          Image.asset('assets/images/MeetApp.jpg'),
         ],
       ),
     );
