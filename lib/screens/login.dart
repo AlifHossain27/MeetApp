@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:meet/widgets/custom_btn.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -23,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           ),
           Image.asset('assets/images/MeetApp.jpg'),
+          CustomBtn(text: 'Join'),
         ],
       ),
     );
