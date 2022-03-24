@@ -4,6 +4,7 @@ import 'package:meet/screens/login.dart';
 import 'package:meet/utils/colors.dart';
 import 'package:meet/screens/home.dart';
 import 'package:meet/resources/auth_methods.dart';
+import 'package:meet/screens/video_call.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => const LoginScreen(),
         '/home': (context) => const HomeScreen(),
+        '/video-call': (context) => const VideoCallScreen(),
       },
       home: StreamBuilder(
         stream: AuthMethods().authChanges,

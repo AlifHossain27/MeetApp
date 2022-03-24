@@ -25,7 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> pages = [
     Meeting(),
     const MeetingHistory(),
-    const Text('Contacts'),
     const Text('Settings'),
   ];
 
@@ -63,13 +62,6 @@ class _HomeScreenState extends State<HomeScreen> {
               Icons.lock_clock,
               ),
               label: 'Meetings',
-              ),
-
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person_outline,
-              ),
-              label: 'Contacts',
               ),
 
           BottomNavigationBarItem(
