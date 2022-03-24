@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:meet/resources/auth_methods.dart';
 import 'package:meet/utils/colors.dart';
 import 'package:meet/widgets/meeting_btn.dart';
+import 'package:meet/screens/meeting.dart';
+import 'package:meet/screens/meeting_history.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -20,6 +22,13 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  List<Widget> pages = [
+    Meeting(),
+    const MeetingHistory(),
+    const Text('Contacts'),
+    const Text('Settings'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,46 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
 
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              MeetingButton(
-                onPressed: () {},
-                text: 'New Meeting',
-                icon: Icons.videocam,
-                ),
-
-              MeetingButton(
-                onPressed: () {},
-                text: 'Join Meeting',
-                icon: Icons.add_box_rounded,
-                ),
-
-              MeetingButton(
-                onPressed: () {},
-                text: 'Schedule',
-                icon: Icons.calendar_today,
-                ),
-
-              MeetingButton(
-                onPressed: () {},
-                text: 'Share Screen',
-                icon: Icons.arrow_upward_rounded,
-                ),
-            ],
-          ),
-
-          const Expanded(
-            child: Center(
-              child: Text('Create or Join Meeting', 
-              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18,)),
-            ),
-          ),
-
-        ],
-      ),
+      body: pages[_page],
 
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: footerColor,
@@ -85,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(
               Icons.comment_bank,
               ),
-              label: 'Chat',
+              label: 'Meet',
               ),
 
           BottomNavigationBarItem(
