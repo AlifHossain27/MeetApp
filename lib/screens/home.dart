@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meet/resources/auth_methods.dart';
 import 'package:meet/utils/colors.dart';
-import 'package:meet/widgets/meeting_btn.dart';
+import 'package:meet/widgets/custom_btn.dart';
 import 'package:meet/screens/meeting.dart';
 import 'package:meet/screens/meeting_history.dart';
 
@@ -14,7 +14,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   int _page = 0;
   onPageChanged(int page){
     setState(() {
@@ -25,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> pages = [
     Meeting(),
     const MeetingHistory(),
-    const Text('Settings'),
+    CustomBtn(text: 'LogOut', onPressed: () => AuthMethods().signOut()),
   ];
 
   @override
